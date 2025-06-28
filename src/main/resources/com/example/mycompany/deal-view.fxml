@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.mycompany.controller.DealController"
+      spacing="24" style="-fx-padding: 32;">
+    
+    <!-- Заголовок -->
+    <VBox spacing="8">
+        <Text text="Управление сделками" style="-fx-font-size: 28px; -fx-font-weight: bold;"/>
+        <Text text="Создавайте и управляйте сделками с клиентами" style="-fx-font-size: 14px;"/>
+    </VBox>
+    
+    <!-- Таблица сделок -->
+    <VBox maxWidth="900" VBox.vgrow="ALWAYS">
+        
+        <TableView fx:id="dealTable" prefWidth="800" prefHeight="400">
+            <columns>
+                <TableColumn fx:id="customerColumn" text="Клиент" prefWidth="200"/>
+                <TableColumn fx:id="dateColumn" text="Дата" prefWidth="150"/>
+                <TableColumn fx:id="typeColumn" text="Тип" prefWidth="100"/>
+                <TableColumn fx:id="discountColumn" text="Скидка" prefWidth="100"/>
+                <TableColumn fx:id="totalColumn" text="Сумма" prefWidth="150"/>
+            </columns>
+        </TableView>
+        
+        <!-- Кнопки управления -->
+        <HBox spacing="12" style="-fx-padding: 20 0 0 0;">
+            <Button text="Добавить" onAction="#onAddDeal" style="-fx-font-size: 14px; -fx-padding: 10 20; -fx-background-color: #2a3b8f; -fx-text-fill: white; -fx-background-radius: 6; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 3, 0, 0, 1);"/>
+            
+            <Button text="Изменить" onAction="#onEditDeal" style="-fx-font-size: 14px; -fx-padding: 10 20; -fx-background-color: #2a3b8f; -fx-text-fill: white; -fx-background-radius: 6; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 3, 0, 0, 1);"/>
+            
+            <Button text="Удалить" onAction="#onDeleteDeal" style="-fx-font-size: 14px; -fx-padding: 10 20; -fx-background-color: #2a3b8f; -fx-text-fill: white; -fx-background-radius: 6; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 3, 0, 0, 1);"/>
+        </HBox>
+        
+        <!-- Сообщения -->
+        <Label fx:id="messageLabel" visible="false" style="-fx-font-size: 14px; -fx-padding: 8;"/>
+    </VBox>
+    
+</VBox> 

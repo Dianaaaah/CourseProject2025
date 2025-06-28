@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.mycompany.controller.MainController">
+    
+    <!-- Верхняя панель с информацией о пользователе -->
+    <top>
+        <HBox style="-fx-padding: 16; -fx-background-color: #f8f9fa; -fx-border-color: #e9ecef; -fx-border-width: 0 0 1 0;" alignment="CENTER_LEFT">
+            <Label fx:id="userInfoLabel" text="Пользователь" style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #2a3b8f;"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button fx:id="profileButton" onAction="#onProfileEdit" style="-fx-font-size: 13px; -fx-padding: 10 20; -fx-background-color: #2a3b8f; -fx-text-fill: white; -fx-background-radius: 20; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 3, 0, 0, 1); -fx-min-width: 100;">
+                <graphic>
+                    <HBox spacing="6" alignment="CENTER">
+                        <Text text="👤" style="-fx-font-size: 14px;"/>
+                        <Text text="Профиль" style="-fx-font-size: 13px;"/>
+                    </HBox>
+                </graphic>
+            </Button>
+        </HBox>
+    </top>
+    
+    <!-- Левая панель с навигацией -->
+    <left>
+        <VBox style="-fx-padding: 24; -fx-spacing: 16;" prefWidth="250">
+            
+            <!-- Логотип -->
+            <VBox spacing="4" style="-fx-padding: 0 0 24 0;">
+                <Text text="MyCompany" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+                <Text text="Панель управления" style="-fx-font-size: 12px;"/>
+            </VBox>
+            
+            <!-- Навигационные кнопки -->
+            <VBox spacing="8">
+                <Button fx:id="productsButton" text="Товары" style="-fx-font-size: 15px; -fx-padding: 14 20; -fx-min-width: 200; -fx-background-color: #2a3b8f; -fx-text-fill: white; -fx-background-radius: 8; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 4, 0, 0, 2);"/>
+                
+                <Button fx:id="customersButton" text="Клиенты" style="-fx-font-size: 15px; -fx-padding: 14 20; -fx-min-width: 200; -fx-background-color: #2a3b8f; -fx-text-fill: white; -fx-background-radius: 8; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 4, 0, 0, 2);"/>
+                
+                <Button fx:id="dealsButton" text="Сделки" style="-fx-font-size: 15px; -fx-padding: 14 20; -fx-min-width: 200; -fx-background-color: #2a3b8f; -fx-text-fill: white; -fx-background-radius: 8; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 4, 0, 0, 2);"/>
+                
+                <!-- Кнопки только для администратора -->
+                <Button fx:id="usersButton" text="Пользователи" visible="false" style="-fx-font-size: 15px; -fx-padding: 14 20; -fx-min-width: 200; -fx-background-color: #2a3b8f; -fx-text-fill: white; -fx-background-radius: 8; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 4, 0, 0, 2);"/>
+                
+                <Button fx:id="discountsButton" text="Скидки" visible="false" style="-fx-font-size: 15px; -fx-padding: 14 20; -fx-min-width: 200; -fx-background-color: #2a3b8f; -fx-text-fill: white; -fx-background-radius: 8; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 4, 0, 0, 2);"/>
+            </VBox>
+            
+        </VBox>
+    </left>
+    
+    <!-- Центральная область для контента -->
+    <center>
+        <Pane fx:id="contentPane" style="-fx-padding: 24;"/>
+    </center>
+    
+</BorderPane> 

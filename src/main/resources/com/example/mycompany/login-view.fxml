@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.mycompany.controller.LoginController"
+      spacing="24" style="-fx-padding: 40;">
+
+    <!-- Форма входа -->
+    <VBox maxWidth="400" spacing="20">
+        
+        <Text text="Вход в систему" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+        
+        <VBox spacing="8">
+            <Label text="Имя пользователя:" style="-fx-font-size: 14px; -fx-font-weight: bold;"/>
+            <TextField fx:id="usernameField" promptText="Введите имя пользователя"/>
+        </VBox>
+        
+        <VBox spacing="8">
+            <Label text="Пароль:" style="-fx-font-size: 14px; -fx-font-weight: bold;"/>
+            <PasswordField fx:id="passwordField" promptText="Введите пароль"/>
+            </VBox>
+        
+        <Button text="Войти" onAction="#onLogin" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-min-width: 200; -fx-background-color: #2a3b8f; -fx-text-fill: white; -fx-background-radius: 8; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 4, 0, 0, 2);"/>
+        
+        <Button text="Регистрация" onAction="#onShowRegister" style="-fx-font-size: 14px; -fx-min-width: 200; -fx-background-color: #2a3b8f; -fx-text-fill: white; -fx-background-radius: 8; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 4, 0, 0, 2);"/>
+        
+        <Label fx:id="messageLabel" visible="false" style="-fx-font-size: 14px;"/>
+    </VBox>
+    
+</VBox>

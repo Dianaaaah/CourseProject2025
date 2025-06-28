@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.mycompany.controller.ProductController"
+      spacing="24" style="-fx-padding: 32;">
+    
+    <!-- Заголовок -->
+    <VBox spacing="8">
+        <Text text="Управление товарами" style="-fx-font-size: 28px; -fx-font-weight: bold;"/>
+        <Text text="Управляйте каталогом товаров компании" style="-fx-font-size: 14px;"/>
+    </VBox>
+    
+    <!-- Таблица товаров -->
+    <VBox maxWidth="900" VBox.vgrow="ALWAYS">
+        
+        <TableView fx:id="productTable" prefWidth="800" prefHeight="400">
+            <columns>
+                <TableColumn fx:id="nameColumn" text="Название" prefWidth="200"/>
+                <TableColumn fx:id="wholesalePriceColumn" text="Оптовая цена" prefWidth="150"/>
+                <TableColumn fx:id="retailPriceColumn" text="Розничная цена" prefWidth="150"/>
+                <TableColumn fx:id="descriptionColumn" text="Описание" prefWidth="300"/>
+            </columns>
+        </TableView>
+        
+        <!-- Кнопки управления -->
+        <HBox spacing="12" style="-fx-padding: 20 0 0 0;">
+            <Button text="Добавить" onAction="#onAddProduct" style="-fx-font-size: 14px; -fx-padding: 10 20; -fx-background-color: #2a3b8f; -fx-text-fill: white; -fx-background-radius: 6; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 3, 0, 0, 1);"/>
+            
+            <Button text="Изменить" onAction="#onEditProduct" style="-fx-font-size: 14px; -fx-padding: 10 20; -fx-background-color: #2a3b8f; -fx-text-fill: white; -fx-background-radius: 6; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 3, 0, 0, 1);"/>
+            
+            <Button text="Удалить" onAction="#onDeleteProduct" style="-fx-font-size: 14px; -fx-padding: 10 20; -fx-background-color: #2a3b8f; -fx-text-fill: white; -fx-background-radius: 6; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 3, 0, 0, 1);"/>
+        </HBox>
+        
+        <!-- Сообщения -->
+        <Label fx:id="messageLabel" visible="false" style="-fx-font-size: 14px; -fx-padding: 8;"/>
+    </VBox>
+    
+</VBox> 

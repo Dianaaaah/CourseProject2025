@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.mycompany.controller.DealEditDialogController"
+      spacing="18" alignment="CENTER" style="-fx-background-color: white; -fx-background-radius: 18; -fx-padding: 32 32 32 32;">
+    <Label fx:id="dialogTitleLabel" text="Создать сделку" style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #2a3b8f; -fx-padding: 0 0 18 0;" alignment="CENTER" maxWidth="1.7976931348623157E308"/>
+    <HBox spacing="16" alignment="CENTER">
+        <ComboBox fx:id="customerComboBox" promptText="Покупатель" prefWidth="220"/>
+        <ComboBox fx:id="dealTypeComboBox" promptText="Тип сделки" prefWidth="140"/>
+    </HBox>
+    <TableView fx:id="dealProductsTable" prefWidth="600" prefHeight="200">
+        <columns>
+            <TableColumn fx:id="productNameColumn" text="Товар" prefWidth="200"/>
+            <TableColumn fx:id="quantityColumn" text="Кол-во" prefWidth="80"/>
+            <TableColumn fx:id="priceColumn" text="Цена" prefWidth="100"/>
+            <TableColumn fx:id="sumColumn" text="Сумма" prefWidth="120"/>
+        </columns>
+    </TableView>
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <ComboBox fx:id="productComboBox" promptText="Товар" prefWidth="200"/>
+        <TextField fx:id="quantityField" promptText="Кол-во" prefWidth="80"/>
+        <Button text="Добавить" onAction="#onAddProductToDeal" style="-fx-background-radius: 8; -fx-background-color: #2a3b8f; -fx-text-fill: white; -fx-font-size: 15px; -fx-padding: 8 24; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 3, 0, 0, 1);"/>
+        <Button fx:id="deleteProductButton" text="Удалить" style="-fx-background-radius: 8; -fx-background-color: #e0e7ef; -fx-text-fill: #b42a2a; -fx-font-size: 15px; -fx-padding: 8 24; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 3, 0, 0, 1);"/>
+    </HBox>
+    <HBox spacing="24" alignment="CENTER_RIGHT" style="-fx-padding: 12 0 0 0;">
+        <Label fx:id="discountLabel" text="Скидка: 0%" style="-fx-font-size: 16px; -fx-text-fill: #2a3b8f;"/>
+        <Label fx:id="totalLabel" text="Итого: 0.00" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #2a3b8f;"/>
+    </HBox>
+</VBox> 

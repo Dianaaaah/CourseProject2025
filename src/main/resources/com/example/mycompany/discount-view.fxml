@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.mycompany.controller.DiscountController"
+      spacing="24" style="-fx-padding: 32;">
+    
+    <!-- Заголовок -->
+    <VBox spacing="8">
+        <Text text="Управление скидками" style="-fx-font-size: 28px; -fx-font-weight: bold;"/>
+        <Text text="Настройте систему скидок для сделок" style="-fx-font-size: 14px;"/>
+    </VBox>
+    
+    <!-- Таблица скидок -->
+    <VBox maxWidth="900" VBox.vgrow="ALWAYS">
+        
+        <TableView fx:id="discountTable" prefWidth="800" prefHeight="400">
+            <columns>
+                <TableColumn fx:id="percentColumn" text="Процент скидки" prefWidth="150"/>
+                <TableColumn fx:id="minTotalCostColumn" text="Мин. сумма" prefWidth="150"/>
+                <TableColumn fx:id="minTotalAmountColumn" text="Мин. количество" prefWidth="150"/>
+            </columns>
+        </TableView>
+        
+        <!-- Кнопки управления -->
+        <HBox spacing="12" style="-fx-padding: 20 0 0 0;">
+            <Button text="Добавить" onAction="#onAddDiscount" style="-fx-font-size: 14px; -fx-padding: 10 20; -fx-background-color: #2a3b8f; -fx-text-fill: white; -fx-background-radius: 6; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 3, 0, 0, 1);"/>
+            
+            <Button text="Изменить" onAction="#onEditDiscount" style="-fx-font-size: 14px; -fx-padding: 10 20; -fx-background-color: #2a3b8f; -fx-text-fill: white; -fx-background-radius: 6; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 3, 0, 0, 1);"/>
+            
+            <Button text="Удалить" onAction="#onDeleteDiscount" style="-fx-font-size: 14px; -fx-padding: 10 20; -fx-background-color: #2a3b8f; -fx-text-fill: white; -fx-background-radius: 6; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 3, 0, 0, 1);"/>
+        </HBox>
+        
+        <!-- Сообщения -->
+        <Label fx:id="messageLabel" visible="false" style="-fx-font-size: 14px; -fx-padding: 8;"/>
+    </VBox>
+    
+</VBox> 
