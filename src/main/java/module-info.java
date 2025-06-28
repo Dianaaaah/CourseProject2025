@@ -5,7 +5,9 @@ module com.example.mycompany {
 
     opens com.example.mycompany to javafx.fxml;
     opens com.example.mycompany.model to javafx.fxml;
+    opens com.example.mycompany.controller to javafx.fxml;
 
     exports com.example.mycompany;
     exports com.example.mycompany.model;
+    exports com.example.mycompany.controller;
 }
